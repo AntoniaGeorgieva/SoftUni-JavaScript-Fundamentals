@@ -1,13 +1,8 @@
-function solve(ch)
-{
-  if(ch == ch.toUpperCase())
-  {
+function lowerOrUpper(ch) {
+  if (ch == ch.toUpperCase()) {
     console.log('upper-case')
   }
-  else
-  {
+  else {
     console.log('lower-case')
   }
 }
-
-solve('A')
