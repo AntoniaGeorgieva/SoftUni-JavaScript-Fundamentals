@@ -1,5 +1,4 @@
-function cardGame(arr)
-{
+function cardGame(arr) {
   let personObj = {};
   let peopleAndCards = {};
 
@@ -11,7 +10,6 @@ function cardGame(arr)
       peopleAndCards[personName] = [];
     }
     let cards = command[1].split(", ");
-    let cardsArr = [];
     let cardPower = {
       'J': 11,
       'Q': 12,
@@ -24,65 +22,64 @@ function cardGame(arr)
       'D': 2,
       'C': 1
     }
-    
+
     for (let card of cards) {
       if (peopleAndCards[personName].includes(card)) {
         continue;
-      } 
+      }
       peopleAndCards[personName].push(card)
       let value = 0
       let t = card[card.length - 1];
       let p = card.split(t)[0];
-      // value += typePower[t] * cardPower[p]
-      if(t == "S") {
-        if(p == "J") {
+      if (t == "S") {
+        if (p == "J") {
           value += 4 * 11;
-        } else if(p == "Q") {
+        } else if (p == "Q") {
           value += 4 * 12;
-        } else if(p == "K") {
+        } else if (p == "K") {
           value += 4 * 13;
-        } else if(p == "A") {
+        } else if (p == "A") {
           value += 4 * 14;
         } else {
           value += 4 * Number(p);
         }
-      } else if(t == "H") {
-        if(p == "J") {
+      } else if (t == "H") {
+        if (p == "J") {
           value += 3 * 11;
-        } else if(p == "Q") {
+        } else if (p == "Q") {
           value += 3 * 12;
-        } else if(p == "K") {
+        } else if (p == "K") {
           value += 3 * 13;
-        } else if(p == "A") {
+        } else if (p == "A") {
           value += 3 * 14;
         } else {
-        value += 3 * Number(p);
+          value += 3 * Number(p);
         }
-      } else if(t == "D") {
-        if(p == "J") {
+      } else if (t == "D") {
+        if (p == "J") {
           value += 2 * 11;
-        } else if(p == "Q") {
+        } else if (p == "Q") {
           value += 2 * 12;
-        } else if(p == "K") {
+        } else if (p == "K") {
           value += 2 * 13;
-        } else if(p == "A") {
+        } else if (p == "A") {
           value += 2 * 14;
         } else {
           value += 2 * Number(p);
         }
-      } else if(t == "C") {
-        if(p == "J") {
+      } else if (t == "C") {
+        if (p == "J") {
           value += 11;
-        } else if(p == "Q") {
+        } else if (p == "Q") {
           value += 12;
-        } else if(p == "K") {
+        } else if (p == "K") {
           value += 13;
-        } else if(p == "A") {
+        } else if (p == "A") {
           value += 14;
         } else {
           value += Number(p);
         }
-    }
+      }
       personObj[personName] += Number(value);
     }
   }
@@ -90,13 +87,3 @@ function cardGame(arr)
     console.log(`${key}: ${[personObj[key]]}`);
   }
 }
-
-cardGame([
-  'Peter: 2C, 4H, 9H, AS, QS',
-  'Tomas: 3H, 10S, JC, KD, 5S, 10S',
-  'Andrea: QH, QC, QS, QD',
-  'Tomas: 6H, 7S, KC, KD, 5S, 10C',
-  'Andrea: QH, QC, JS, JD, JC',
-  'Peter: JD, JD, JD, JD, JD, JD'
-  ]
-  )
