@@ -1,6 +1,5 @@
-function loadingBar(num)
-{
-  if(num == 100) {
+function loadingBar(num) {
+  if (num == 100) {
     console.log("100% Complete!");
     console.log("[%%%%%%%%%%]");
   } else {
@@ -9,7 +8,7 @@ function loadingBar(num)
     for (let i = 0; i < num / 10; i++) {
       percent += "%";
     }
-    for(let i = 0; i < 10 - (num / 10); i++) {
+    for (let i = 0; i < 10 - (num / 10); i++) {
       points += ".";
     }
 
@@ -17,5 +16,3 @@ function loadingBar(num)
     console.log("Still loading...");
   }
 }
-
-loadingBar(50)

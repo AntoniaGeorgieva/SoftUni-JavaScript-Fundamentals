@@ -1,16 +1,14 @@
-function passwordValidator(pass)
-{
+function passwordValidator(pass) {
   let isValidLength = checkValidPassLength(pass);
   let isOnlyLettersAndDigits = checkOnlyLettersAndDigts(pass);
   let isMin2Digits = checkMin2Digits(pass);
 
-  if(isValidLength && isOnlyLettersAndDigits && isMin2Digits) {
+  if (isValidLength && isOnlyLettersAndDigits && isMin2Digits) {
     console.log("Password is valid");
   }
 
-  function checkValidPassLength(pass)
-  {
-    if(pass.length >= 6 && pass.length <= 10) { 
+  function checkValidPassLength(pass) {
+    if (pass.length >= 6 && pass.length <= 10) {
       return true;
     }
     else {
@@ -19,20 +17,18 @@ function passwordValidator(pass)
     }
   }
 
-  function checkOnlyLettersAndDigts(pass)
-  {
+  function checkOnlyLettersAndDigts(pass) {
     for (let i = 0; i < pass.length; i++) {
       let code = pass[i].charCodeAt(0);
-      if (!((code >= 48 &&  code <= 57) || (code >= 65 & code <= 90) || (code >= 97 && code <= 122))) {
+      if (!((code >= 48 && code <= 57) || (code >= 65 & code <= 90) || (code >= 97 && code <= 122))) {
         console.log("Password must consist only of letters and digits");
         return false;
-        }
       }
-      return true;
     }
+    return true;
+  }
 
-  function checkMin2Digits(pass)
-  {
+  function checkMin2Digits(pass) {
     let digitCounter = 0;
     for (let i = 0; i < pass.length; i++) {
       let code = pass[i].charCodeAt(0);
@@ -40,7 +36,7 @@ function passwordValidator(pass)
         digitCounter++;
       }
     }
-    if(digitCounter < 2) {
+    if (digitCounter < 2) {
       console.log("Password must have at least 2 digits");
       return false
     } else {
@@ -48,6 +44,3 @@ function passwordValidator(pass)
     }
   }
 }
-passwordValidator('logIn')
-passwordValidator('MyPass123')
-//passwordValidator('Pa$s$s')

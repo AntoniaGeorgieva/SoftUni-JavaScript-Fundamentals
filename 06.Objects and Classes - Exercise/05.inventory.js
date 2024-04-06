@@ -20,13 +20,7 @@ function inventory(input) {
     console.log(`Hero: ${hero.name}`);
     console.log(`level => ${hero.level}`);
     if (hero.items.length > 0) {
-      console.log(`Items => ${hero.items.join(", ")}`);
+      console.log(`items => ${hero.items.join(", ")}`);
     }
   }
 }
-
-inventory([
-  'Isacc / 25 / Apple, GravityGun',
-  'Derek / 12 / BarrelVest, DestructionSword',
-  'Hes / 1 / Desolator, Sentinel, Antara'
-  ])
