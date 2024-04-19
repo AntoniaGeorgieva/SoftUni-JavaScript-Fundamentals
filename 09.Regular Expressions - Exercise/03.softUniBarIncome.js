@@ -4,7 +4,7 @@ function softUniBarIncome(input)
   let totalPrice = 0;
 
   while (command !== "end of shift") {
-    let pattern = /%(?<name>[A-Z][a-z]+)%\w*<(?<product>[A-Za-z]+)>\w*\|(?<cnt>[0-9]+)\|\w*(?<price>\d+\.?\d*)\$/;
+    let pattern = /%(?<name>[A-Z][a-z]+)%\w*<(?<product>[A-Za-z]+)>\w*\|(?<cnt>[0-9]+)\|\D*(?<price>[0-9]+[.]*\d)[$]/;
     let match = command.match(pattern);
     let name = match.groups.name;
     let product = match.groups.product;
